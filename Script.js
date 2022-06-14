@@ -33,7 +33,7 @@ function oButton(a,b,c) {
 })
 }
 
-
+//Cashier Rating Buttons
 button('cashierScoreBtn1','cashier=1',1)
 
 button('cashierScoreBtn2','cashier=2',2)
@@ -42,8 +42,10 @@ button('cashierScoreBtn3','cashier=3',3)
 
 button('cashierScoreBtn4','cashier=4',4)
 
+button('cashierScoreBtn5','cashier=5',5)
 
 
+//Overall Rating Buttons
 oButton('overallScoreBtn1','overall=1',1)
 
 oButton('overallScoreBtn2','overall=2',2)
@@ -51,3 +53,27 @@ oButton('overallScoreBtn2','overall=2',2)
 oButton('overallScoreBtn3','overall=3',3)
 
 oButton('overallScoreBtn4','overall=4',4)
+
+oButton('overallScoreBtn5','overall=5',5)
+
+let casheirScore = document.getElementById("cashierScore")
+let overallScore = document.getElementById("overallScore")
+
+let showHide = document.getElementById("show-hide")
+showHide.addEventListener('click',function() {
+    let scoresDiv = document.getElementById("show-scores")
+
+    casheirScore.textContent = cashier
+    overallScore.textContent = overall
+
+    let btnText = showHide.textContent
+    if(btnText === "Display Ratings") {
+        scoresDiv.style.display = "block"
+        showHide.innerHTML = "Hide Ratings"
+
+    }
+    else{
+        scoresDiv.style.display = "none"
+        showHide.innerHTML = "Display Ratings"
+    }
+})
